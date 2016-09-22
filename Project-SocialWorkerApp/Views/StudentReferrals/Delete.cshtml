@@ -1,0 +1,288 @@
+﻿@model Project_SocialWorkerApp.Models.StudentReferralsModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StudentReferralsModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportMonthID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportMonthID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmericanIndianFemale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmericanIndianFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmericanIndianMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmericanIndianMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AsianFemale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AsianFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AsianMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AsianMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BlackFemale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BlackFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BlackMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BlackMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HispanicFemale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HispanicFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HispanicMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HispanicMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MultiracialFemale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MultiracialFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MultiracialMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MultiracialMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WhiteFemale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WhiteFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WhiteMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WhiteMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcademicPerformance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcademicPerformance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AbuseNeglectConsult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbuseNeglectConsult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdministrativeRequest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdministrativeRequest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlcoholDrugSubstanceAbuse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlcoholDrugSubstanceAbuse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Attendance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attendance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BehaviorManagement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BehaviorManagement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bullying)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bullying)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterDevelopment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterDevelopment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConflictResolution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConflictResolution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DropoutPrevention)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DropoutPrevention)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ECReferrals)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ECReferrals)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyAssistance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyAssistance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HealthDental)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HealthDental)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Homelessness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Homelessness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MentalHealth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MentalHealth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NeedsAssessment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NeedsAssessment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SIT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SIT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SMOD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SMOD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SocialServiceNeeds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SocialServiceNeeds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuspensionFollowup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuspensionFollowup)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+    <siteMapNode title="Monthly Reports" url="~/DataEntry/SRIndex" description="Monthly Reports" >
+        <siteMapNode title="List of Reports" url="~/DataEntry/SRIndex" />
+        <siteMapNode title="Student Referrals" url="~/DataEntry/StudentReferrals"/>
+        <siteMapNode title="Responsive Services" url="~/DataEntry/ResponsiveServices" />
+        <siteMapNode title="Indirect Student Services" url="~/DataEntry/IndirectStudentServices"/>
+        <siteMapNode title="Assesments and Screenings" url="~/DataEntry/AssementsScreenings"/>
+        <siteMapNode title="Other Duties" url="~/DataEntry/OtherDuties"/>
+    </siteMapNode>
+    <siteMapNode title="About" url="~/Home/About" description="The controls that QuickNav can render" />
+    <siteMapNode title="Contact" url="~/Home/Contact" description="A menu to show some of the features in action">   </siteMapNode>
+</siteMap>

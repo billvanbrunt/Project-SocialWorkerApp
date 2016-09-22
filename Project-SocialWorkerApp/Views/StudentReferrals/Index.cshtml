@@ -1,0 +1,225 @@
+﻿@model IEnumerable<Project_SocialWorkerApp.Models.StudentReferralsModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportMonthID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmericanIndianFemale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmericanIndianMale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AsianFemale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AsianMale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlackFemale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlackMale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HispanicFemale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HispanicMale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MultiracialFemale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MultiracialMale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WhiteFemale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WhiteMale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcademicPerformance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AbuseNeglectConsult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdministrativeRequest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlcoholDrugSubstanceAbuse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Attendance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BehaviorManagement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bullying)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CharacterDevelopment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConflictResolution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DropoutPrevention)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ECReferrals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyAssistance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HealthDental)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Homelessness)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MentalHealth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NeedsAssessment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SMOD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SocialServiceNeeds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SuspensionFollowup)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportMonthID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmericanIndianFemale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmericanIndianMale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AsianFemale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AsianMale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlackFemale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlackMale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HispanicFemale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HispanicMale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MultiracialFemale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MultiracialMale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WhiteFemale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WhiteMale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcademicPerformance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AbuseNeglectConsult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdministrativeRequest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlcoholDrugSubstanceAbuse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Attendance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BehaviorManagement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bullying)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CharacterDevelopment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConflictResolution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DropoutPrevention)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ECReferrals)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyAssistance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HealthDental)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Homelessness)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MentalHealth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NeedsAssessment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SIT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SMOD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SocialServiceNeeds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SuspensionFollowup)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

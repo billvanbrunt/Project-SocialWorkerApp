@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Project_SocialWorkerApp.Models;
 
 namespace Project_SocialWorkerApp.Controllers
 {
@@ -10,9 +11,14 @@ namespace Project_SocialWorkerApp.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
+            var model = new SWMainModel
+            {
+                 
+            };
 
+            return View(model);
+        }
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
