@@ -141,6 +141,7 @@
     <Compile Include="Models\MyDBContext.cs" />
     <Compile Include="Models\ResponsiveModel.cs" />
     <Compile Include="Models\SchoolINfoModel.cs" />
+    <Compile Include="Models\StudentReferralsModelX.cs" />
     <Compile Include="Models\StudentReferralsModel.cs" />
     <Compile Include="Models\SWMainModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

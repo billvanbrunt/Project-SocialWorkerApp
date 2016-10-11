@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Project_SocialWorkerApp.Models
 {
-    public class StudentReferralsModel
+    public partial class StudentReferralsModel    
     {
         [Key]
         public int ID { get; set; }
