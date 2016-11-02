@@ -68,6 +68,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -138,12 +140,44 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AssmentScreening.cs">
+      <DependentUpon>SWData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IndirectStudentSrv.cs">
+      <DependentUpon>SWData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\MyDBContext.cs" />
+    <Compile Include="Models\OtherDuty.cs">
+      <DependentUpon>SWData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Responsive.cs">
+      <DependentUpon>SWData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ResponsiveModel.cs" />
     <Compile Include="Models\SchoolINfoModel.cs" />
-    <Compile Include="Models\StudentReferralsModelX.cs" />
-    <Compile Include="Models\StudentReferralsModel.cs" />
+    <Compile Include="Models\StudentReferral.cs">
+      <DependentUpon>SWData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentReferralMD.cs" />
+    <Compile Include="Models\SWData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SWData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SWData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SWData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SWData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SWData.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\SWMainModel.cs" />
+    <Compile Include="Models\vew_SchoolInfo.cs">
+      <DependentUpon>SWData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -164,8 +198,25 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Models\SWData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SWData.edmx</DependentUpon>
+      <LastGenOutput>SWData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SWData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SWData.edmx</DependentUpon>
+      <LastGenOutput>SWData.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\SWData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SWData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SWData.edmx.diagram">
+      <DependentUpon>SWData.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
@@ -221,6 +272,9 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,11 +7,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Project_SocialWorkerApp.Models
 {
-    [MetadataType(typeof(StudentReferralsMetadata))]
-    public partial class StudentReferrals { }
+    [MetadataType(typeof(StudentReferralMD))]
+    public partial class StudentReferral { }
 
 
-        public partial class StudentReferralsMetadata
+        public partial class StudentReferralMD
         {
         [Key]
         public int ID;
@@ -82,7 +82,6 @@ namespace Project_SocialWorkerApp.Models
         public bool SocialServiceNeeds;
         [Display(Name = "Suspension Follow up")]
         public bool SuspensionFollowup;
-
 
     }
 }

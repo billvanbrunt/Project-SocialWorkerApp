@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SocialWorkersAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AssmentScreening">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SoicialWorker" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ReportMonthID" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="VinelandsCompleted" Type="int" Nullable="false" />
+          <Property Name="SocialHistories" Type="int" Nullable="false" />
+          <Property Name="AutismEvaluations" Type="int" Nullable="false" />
+          <Property Name="StudentsScreened" Type="int" Nullable="false" />
+          <Property Name="ASOtherNo" Type="int" Nullable="false" />
+          <Property Name="ASOtherText" Type="varchar" MaxLength="250" />
+          <Property Name="Active" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IndirectStudentSrvs">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SoicialWorker" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ReportMonthID" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="TPDevAttend" Type="int" Nullable="false" />
+          <Property Name="TPDevFacilitated" Type="int" Nullable="false" />
+          <Property Name="CollabWorkParticipated" Type="int" Nullable="false" />
+          <Property Name="ContributedToSafeSchool" Type="varchar" MaxLength="500" />
+          <Property Name="TechUsed" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="StudentAdvocacy" Type="int" Nullable="false" />
+          <Property Name="FamilyAdvocacy" Type="int" Nullable="false" />
+          <Property Name="SchoolStaffConsultation" Type="int" Nullable="false" />
+          <Property Name="AttenedTraining" Type="int" Nullable="false" />
+          <Property Name="ProfessionalDevelopmentFacilitated" Type="int" Nullable="false" />
+          <Property Name="ISSOtherNo" Type="int" Nullable="false" />
+          <Property Name="ISSOtherText" Type="varchar" MaxLength="250" />
+          <Property Name="ISTmeetings" Type="int" Nullable="false" />
+          <Property Name="504meetings" Type="int" Nullable="false" />
+          <Property Name="PBISmeetings" Type="int" Nullable="false" />
+          <Property Name="IEPmeetings" Type="int" Nullable="false" />
+          <Property Name="CPSteam" Type="int" Nullable="false" />
+          <Property Name="CandSOtherNo" Type="int" Nullable="false" />
+          <Property Name="CandSOtherText" Type="varchar" MaxLength="250" />
+          <Property Name="ParentCourtReferrals" Type="int" Nullable="false" />
+          <Property Name="JuvenileCourtReferrals" Type="int" Nullable="false" />
+          <Property Name="CPSReferrals" Type="int" Nullable="false" />
+          <Property Name="DHHSReferrals" Type="int" Nullable="false" />
+          <Property Name="PublicMentalHealthReferrals" Type="int" Nullable="false" />
+          <Property Name="MentalHealthAgencyReferrals" Type="int" Nullable="false" />
+          <Property Name="SubstanceAbuseServicesReferrals" Type="int" Nullable="false" />
+          <Property Name="HomelessnessServicesReferrals" Type="int" Nullable="false" />
+          <Property Name="FaithCommunityReferrals" Type="int" Nullable="false" />
+          <Property Name="BusinessPartnerReferrals" Type="int" Nullable="false" />
+          <Property Name="Active" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherDuties">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SoicialWorker" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ReportMonthID" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="CarRiderDuty" Type="tinyint" Nullable="false" />
+          <Property Name="BusDuty" Type="tinyint" Nullable="false" />
+          <Property Name="LunchDuty" Type="tinyint" Nullable="false" />
+          <Property Name="HallDuty" Type="tinyint" Nullable="false" />
+          <Property Name="AddressVerification" Type="tinyint" Nullable="false" />
+          <Property Name="LongTermSuspension" Type="tinyint" Nullable="false" />
+          <Property Name="Homelessness" Type="tinyint" Nullable="false" />
+          <Property Name="BenchMarks" Type="tinyint" Nullable="false" />
+          <Property Name="ODOtherNo" Type="tinyint" Nullable="false" />
+          <Property Name="ODOtherText" Type="varchar" MaxLength="250" />
+          <Property Name="Active" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Responsive">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SoicialWorker" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ReportMonthID" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="IndividualCounselingSession" Type="int" Nullable="false" />
+          <Property Name="SmallGroupSession" Type="int" Nullable="false" />
+          <Property Name="ClassRoomSession" Type="int" Nullable="false" />
+          <Property Name="ParentConferences" Type="int" Nullable="false" />
+          <Property Name="HomeVisits" Type="int" Nullable="false" />
+          <Property Name="ParentTelephoneCalls" Type="int" Nullable="false" />
+          <Property Name="ParentWorkshopsFacilitated" Type="int" Nullable="false" />
+          <Property Name="SITInterventions" Type="int" Nullable="false" />
+          <Property Name="OtherServices" Type="int" Nullable="false" />
+          <Property Name="DrugFactsActionPack" Type="tinyint" Nullable="false" />
+          <Property Name="WiseOwls" Type="tinyint" Nullable="false" />
+          <Property Name="SMARTTeam" Type="int" Nullable="false" />
+          <Property Name="BullyProofingSchools" Type="tinyint" Nullable="false" />
+          <Property Name="ConflictResolution" Type="tinyint" Nullable="false" />
+          <Property Name="HabitsofHighlyEffectiveTeens" Type="tinyint" Nullable="false" />
+          <Property Name="SupportGroupActivities" Type="tinyint" Nullable="false" />
+          <Property Name="AllAboutMe" Type="tinyint" Nullable="false" />
+          <Property Name="SkillsforGrowing" Type="tinyint" Nullable="false" />
+          <Property Name="Peacemakers" Type="tinyint" Nullable="false" />
+          <Property Name="TheOtherWesMoore" Type="tinyint" Nullable="false" />
+          <Property Name="HowChildrenSucceed" Type="tinyint" Nullable="false" />
+          <Property Name="SocialWorkToolkit" Type="tinyint" Nullable="false" />
+          <Property Name="DaysandCounting" Type="tinyint" Nullable="false" />
+          <Property Name="WhyTry" Type="tinyint" Nullable="false" />
+          <Property Name="ToolsforTeachingSocialSkills" Type="tinyint" Nullable="false" />
+          <Property Name="CurriculumOther" Type="tinyint" Nullable="false" />
+          <Property Name="Active" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentReferrals">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SoicialWorker" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ReportMonthID" Type="int" Nullable="false" />
+          <Property Name="SiteId" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="AmericanIndianFemale" Type="int" />
+          <Property Name="AmericanIndianMale" Type="int" Nullable="false" />
+          <Property Name="AsianFemale" Type="int" Nullable="false" />
+          <Property Name="AsianMale" Type="int" Nullable="false" />
+          <Property Name="BlackFemale" Type="int" Nullable="false" />
+          <Property Name="BlackMale" Type="int" Nullable="false" />
+          <Property Name="HispanicFemale" Type="int" Nullable="false" />
+          <Property Name="HispanicMale" Type="int" Nullable="false" />
+          <Property Name="MultiracialFemale" Type="int" Nullable="false" />
+          <Property Name="MultiracialMale" Type="int" Nullable="false" />
+          <Property Name="WhiteFemale" Type="int" Nullable="false" />
+          <Property Name="WhiteMale" Type="int" Nullable="false" />
+          <Property Name="AcademicPerformance" Type="tinyint" Nullable="false" />
+          <Property Name="AbuseNeglectConsult" Type="tinyint" Nullable="false" />
+          <Property Name="AdministrativeRequest" Type="tinyint" Nullable="false" />
+          <Property Name="AlcoholDrugSubstanceAbuse" Type="tinyint" Nullable="false" />
+          <Property Name="Attendance" Type="tinyint" Nullable="false" />
+          <Property Name="BehaviorManagement" Type="tinyint" Nullable="false" />
+          <Property Name="Bullying" Type="tinyint" Nullable="false" />
+          <Property Name="CharacterDevelopment" Type="tinyint" Nullable="false" />
+          <Property Name="ConflictResolution" Type="tinyint" Nullable="false" />
+          <Property Name="DropoutPrevention" Type="tinyint" Nullable="false" />
+          <Property Name="ECReferrals" Type="tinyint" Nullable="false" />
+          <Property Name="EmergencyAssistance" Type="tinyint" Nullable="false" />
+          <Property Name="HealthDental" Type="tinyint" Nullable="false" />
+          <Property Name="Homelessness" Type="tinyint" Nullable="false" />
+          <Property Name="MentalHealth" Type="tinyint" Nullable="false" />
+          <Property Name="NeedsAssessment" Type="tinyint" Nullable="false" />
+          <Property Name="SIT" Type="tinyint" Nullable="false" />
+          <Property Name="SMOD" Type="tinyint" Nullable="false" />
+          <Property Name="SocialServiceNeeds" Type="tinyint" Nullable="false" />
+          <Property Name="SuspensionFollowup" Type="tinyint" Nullable="false" />
+          <Property Name="Active" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SocialWorkersApp.dbo.vew_SchoolInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vew_SchoolInfo">
+          <Key>
+            <PropertyRef Name="SiteId" />
+            <PropertyRef Name="Principal" />
+          </Key>
+          <Property Name="SiteId" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="SiteName" Type="varchar" MaxLength="100" />
+          <Property Name="Principal" Type="varchar" MaxLength="52" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="42" />
+          <Property Name="City" Type="varchar" MaxLength="25" />
+          <Property Name="State" Type="char" MaxLength="2" />
+          <Property Name="ZipCode" Type="char" MaxLength="5" />
+          <Property Name="Phone" Type="char" MaxLength="10" />
+          <Property Name="Fax" Type="char" MaxLength="10" />
+          <Property Name="SchoolType" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="SocialWorkersAppModelStoreContainer">
+          <EntitySet Name="AssmentScreening" EntityType="Self.AssmentScreening" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IndirectStudentSrvs" EntityType="Self.IndirectStudentSrvs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtherDuties" EntityType="Self.OtherDuties" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Responsive" EntityType="Self.Responsive" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentReferrals" EntityType="Self.StudentReferrals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vew_SchoolInfo" EntityType="Self.vew_SchoolInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vew_SchoolInfo].[SiteId] AS [SiteId], 
+    [vew_SchoolInfo].[SiteName] AS [SiteName], 
+    [vew_SchoolInfo].[Principal] AS [Principal], 
+    [vew_SchoolInfo].[Address] AS [Address], 
+    [vew_SchoolInfo].[City] AS [City], 
+    [vew_SchoolInfo].[State] AS [State], 
+    [vew_SchoolInfo].[ZipCode] AS [ZipCode], 
+    [vew_SchoolInfo].[Phone] AS [Phone], 
+    [vew_SchoolInfo].[Fax] AS [Fax], 
+    [vew_SchoolInfo].[SchoolType] AS [SchoolType]
+    FROM [dbo].[vew_SchoolInfo] AS [vew_SchoolInfo]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SocialWorkersAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AssmentScreening">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SoicialWorker" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReportMonthID" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VinelandsCompleted" Type="Int32" Nullable="false" />
+          <Property Name="SocialHistories" Type="Int32" Nullable="false" />
+          <Property Name="AutismEvaluations" Type="Int32" Nullable="false" />
+          <Property Name="StudentsScreened" Type="Int32" Nullable="false" />
+          <Property Name="ASOtherNo" Type="Int32" Nullable="false" />
+          <Property Name="ASOtherText" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IndirectStudentSrv">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SoicialWorker" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReportMonthID" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TPDevAttend" Type="Int32" Nullable="false" />
+          <Property Name="TPDevFacilitated" Type="Int32" Nullable="false" />
+          <Property Name="CollabWorkParticipated" Type="Int32" Nullable="false" />
+          <Property Name="ContributedToSafeSchool" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TechUsed" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StudentAdvocacy" Type="Int32" Nullable="false" />
+          <Property Name="FamilyAdvocacy" Type="Int32" Nullable="false" />
+          <Property Name="SchoolStaffConsultation" Type="Int32" Nullable="false" />
+          <Property Name="AttenedTraining" Type="Int32" Nullable="false" />
+          <Property Name="ProfessionalDevelopmentFacilitated" Type="Int32" Nullable="false" />
+          <Property Name="ISSOtherNo" Type="Int32" Nullable="false" />
+          <Property Name="ISSOtherText" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ISTmeetings" Type="Int32" Nullable="false" />
+          <Property Name="C504meetings" Type="Int32" Nullable="false" />
+          <Property Name="PBISmeetings" Type="Int32" Nullable="false" />
+          <Property Name="IEPmeetings" Type="Int32" Nullable="false" />
+          <Property Name="CPSteam" Type="Int32" Nullable="false" />
+          <Property Name="CandSOtherNo" Type="Int32" Nullable="false" />
+          <Property Name="CandSOtherText" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ParentCourtReferrals" Type="Int32" Nullable="false" />
+          <Property Name="JuvenileCourtReferrals" Type="Int32" Nullable="false" />
+          <Property Name="CPSReferrals" Type="Int32" Nullable="false" />
+          <Property Name="DHHSReferrals" Type="Int32" Nullable="false" />
+          <Property Name="PublicMentalHealthReferrals" Type="Int32" Nullable="false" />
+          <Property Name="MentalHealthAgencyReferrals" Type="Int32" Nullable="false" />
+          <Property Name="SubstanceAbuseServicesReferrals" Type="Int32" Nullable="false" />
+          <Property Name="HomelessnessServicesReferrals" Type="Int32" Nullable="false" />
+          <Property Name="FaithCommunityReferrals" Type="Int32" Nullable="false" />
+          <Property Name="BusinessPartnerReferrals" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OtherDuty">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SoicialWorker" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReportMonthID" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CarRiderDuty" Type="Byte" Nullable="false" />
+          <Property Name="BusDuty" Type="Byte" Nullable="false" />
+          <Property Name="LunchDuty" Type="Byte" Nullable="false" />
+          <Property Name="HallDuty" Type="Byte" Nullable="false" />
+          <Property Name="AddressVerification" Type="Byte" Nullable="false" />
+          <Property Name="LongTermSuspension" Type="Byte" Nullable="false" />
+          <Property Name="Homelessness" Type="Byte" Nullable="false" />
+          <Property Name="BenchMarks" Type="Byte" Nullable="false" />
+          <Property Name="ODOtherNo" Type="Byte" Nullable="false" />
+          <Property Name="ODOtherText" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Responsive">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SoicialWorker" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReportMonthID" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IndividualCounselingSession" Type="Int32" Nullable="false" />
+          <Property Name="SmallGroupSession" Type="Int32" Nullable="false" />
+          <Property Name="ClassRoomSession" Type="Int32" Nullable="false" />
+          <Property Name="ParentConferences" Type="Int32" Nullable="false" />
+          <Property Name="HomeVisits" Type="Int32" Nullable="false" />
+          <Property Name="ParentTelephoneCalls" Type="Int32" Nullable="false" />
+          <Property Name="ParentWorkshopsFacilitated" Type="Int32" Nullable="false" />
+          <Property Name="SITInterventions" Type="Int32" Nullable="false" />
+          <Property Name="OtherServices" Type="Int32" Nullable="false" />
+          <Property Name="DrugFactsActionPack" Type="Byte" Nullable="false" />
+          <Property Name="WiseOwls" Type="Byte" Nullable="false" />
+          <Property Name="SMARTTeam" Type="Int32" Nullable="false" />
+          <Property Name="BullyProofingSchools" Type="Byte" Nullable="false" />
+          <Property Name="ConflictResolution" Type="Byte" Nullable="false" />
+          <Property Name="HabitsofHighlyEffectiveTeens" Type="Byte" Nullable="false" />
+          <Property Name="SupportGroupActivities" Type="Byte" Nullable="false" />
+          <Property Name="AllAboutMe" Type="Byte" Nullable="false" />
+          <Property Name="SkillsforGrowing" Type="Byte" Nullable="false" />
+          <Property Name="Peacemakers" Type="Byte" Nullable="false" />
+          <Property Name="TheOtherWesMoore" Type="Byte" Nullable="false" />
+          <Property Name="HowChildrenSucceed" Type="Byte" Nullable="false" />
+          <Property Name="SocialWorkToolkit" Type="Byte" Nullable="false" />
+          <Property Name="DaysandCounting" Type="Byte" Nullable="false" />
+          <Property Name="WhyTry" Type="Byte" Nullable="false" />
+          <Property Name="ToolsforTeachingSocialSkills" Type="Byte" Nullable="false" />
+          <Property Name="CurriculumOther" Type="Byte" Nullable="false" />
+          <Property Name="Active" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentReferral">
+          <Key>
+            <PropertyRef Name="SoicialWorker" />
+            <PropertyRef Name="ReportMonthID" />
+            <PropertyRef Name="SiteId" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SoicialWorker" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReportMonthID" Type="Int32" Nullable="false" />
+          <Property Name="SiteId" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AmericanIndianFemale" Type="Int32" />
+          <Property Name="AmericanIndianMale" Type="Int32" Nullable="false" />
+          <Property Name="AsianFemale" Type="Int32" Nullable="false" />
+          <Property Name="AsianMale" Type="Int32" Nullable="false" />
+          <Property Name="BlackFemale" Type="Int32" Nullable="false" />
+          <Property Name="BlackMale" Type="Int32" Nullable="false" />
+          <Property Name="HispanicFemale" Type="Int32" Nullable="false" />
+          <Property Name="HispanicMale" Type="Int32" Nullable="false" />
+          <Property Name="MultiracialFemale" Type="Int32" Nullable="false" />
+          <Property Name="MultiracialMale" Type="Int32" Nullable="false" />
+          <Property Name="WhiteFemale" Type="Int32" Nullable="false" />
+          <Property Name="WhiteMale" Type="Int32" Nullable="false" />
+          <Property Name="AcademicPerformance" Type="Byte" Nullable="false" />
+          <Property Name="AbuseNeglectConsult" Type="Byte" Nullable="false" />
+          <Property Name="AdministrativeRequest" Type="Byte" Nullable="false" />
+          <Property Name="AlcoholDrugSubstanceAbuse" Type="Byte" Nullable="false" />
+          <Property Name="Attendance" Type="Byte" Nullable="false" />
+          <Property Name="BehaviorManagement" Type="Byte" Nullable="false" />
+          <Property Name="Bullying" Type="Byte" Nullable="false" />
+          <Property Name="CharacterDevelopment" Type="Byte" Nullable="false" />
+          <Property Name="ConflictResolution" Type="Byte" Nullable="false" />
+          <Property Name="DropoutPrevention" Type="Byte" Nullable="false" />
+          <Property Name="ECReferrals" Type="Byte" Nullable="false" />
+          <Property Name="EmergencyAssistance" Type="Byte" Nullable="false" />
+          <Property Name="HealthDental" Type="Byte" Nullable="false" />
+          <Property Name="Homelessness" Type="Byte" Nullable="false" />
+          <Property Name="MentalHealth" Type="Byte" Nullable="false" />
+          <Property Name="NeedsAssessment" Type="Byte" Nullable="false" />
+          <Property Name="SIT" Type="Byte" Nullable="false" />
+          <Property Name="SMOD" Type="Byte" Nullable="false" />
+          <Property Name="SocialServiceNeeds" Type="Byte" Nullable="false" />
+          <Property Name="SuspensionFollowup" Type="Byte" Nullable="false" />
+          <Property Name="Active" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vew_SchoolInfo">
+          <Key>
+            <PropertyRef Name="SiteId" />
+            <PropertyRef Name="Principal" />
+          </Key>
+          <Property Name="SiteId" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SiteName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Principal" Type="String" MaxLength="52" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="42" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="SchoolType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="SocialWorkersAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AssmentScreenings" EntityType="Self.AssmentScreening" />
+          <EntitySet Name="IndirectStudentSrvs" EntityType="Self.IndirectStudentSrv" />
+          <EntitySet Name="OtherDuties" EntityType="Self.OtherDuty" />
+          <EntitySet Name="Responsives" EntityType="Self.Responsive" />
+          <EntitySet Name="StudentReferrals" EntityType="Self.StudentReferral" />
+          <EntitySet Name="vew_SchoolInfo" EntityType="Self.vew_SchoolInfo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SocialWorkersAppModelStoreContainer" CdmEntityContainer="SocialWorkersAppEntities">
+          <EntitySetMapping Name="AssmentScreenings">
+            <EntityTypeMapping TypeName="SocialWorkersAppModel.AssmentScreening">
+              <MappingFragment StoreEntitySet="AssmentScreening">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SoicialWorker" ColumnName="SoicialWorker" />
+                <ScalarProperty Name="ReportMonthID" ColumnName="ReportMonthID" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="VinelandsCompleted" ColumnName="VinelandsCompleted" />
+                <ScalarProperty Name="SocialHistories" ColumnName="SocialHistories" />
+                <ScalarProperty Name="AutismEvaluations" ColumnName="AutismEvaluations" />
+                <ScalarProperty Name="StudentsScreened" ColumnName="StudentsScreened" />
+                <ScalarProperty Name="ASOtherNo" ColumnName="ASOtherNo" />
+                <ScalarProperty Name="ASOtherText" ColumnName="ASOtherText" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IndirectStudentSrvs">
+            <EntityTypeMapping TypeName="SocialWorkersAppModel.IndirectStudentSrv">
+              <MappingFragment StoreEntitySet="IndirectStudentSrvs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SoicialWorker" ColumnName="SoicialWorker" />
+                <ScalarProperty Name="ReportMonthID" ColumnName="ReportMonthID" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="TPDevAttend" ColumnName="TPDevAttend" />
+                <ScalarProperty Name="TPDevFacilitated" ColumnName="TPDevFacilitated" />
+                <ScalarProperty Name="CollabWorkParticipated" ColumnName="CollabWorkParticipated" />
+                <ScalarProperty Name="ContributedToSafeSchool" ColumnName="ContributedToSafeSchool" />
+                <ScalarProperty Name="TechUsed" ColumnName="TechUsed" />
+                <ScalarProperty Name="StudentAdvocacy" ColumnName="StudentAdvocacy" />
+                <ScalarProperty Name="FamilyAdvocacy" ColumnName="FamilyAdvocacy" />
+                <ScalarProperty Name="SchoolStaffConsultation" ColumnName="SchoolStaffConsultation" />
+                <ScalarProperty Name="AttenedTraining" ColumnName="AttenedTraining" />
+                <ScalarProperty Name="ProfessionalDevelopmentFacilitated" ColumnName="ProfessionalDevelopmentFacilitated" />
+                <ScalarProperty Name="ISSOtherNo" ColumnName="ISSOtherNo" />
+                <ScalarProperty Name="ISSOtherText" ColumnName="ISSOtherText" />
+                <ScalarProperty Name="ISTmeetings" ColumnName="ISTmeetings" />
+                <ScalarProperty Name="C504meetings" ColumnName="504meetings" />
+                <ScalarProperty Name="PBISmeetings" ColumnName="PBISmeetings" />
+                <ScalarProperty Name="IEPmeetings" ColumnName="IEPmeetings" />
+                <ScalarProperty Name="CPSteam" ColumnName="CPSteam" />
+                <ScalarProperty Name="CandSOtherNo" ColumnName="CandSOtherNo" />
+                <ScalarProperty Name="CandSOtherText" ColumnName="CandSOtherText" />
+                <ScalarProperty Name="ParentCourtReferrals" ColumnName="ParentCourtReferrals" />
+                <ScalarProperty Name="JuvenileCourtReferrals" ColumnName="JuvenileCourtReferrals" />
+                <ScalarProperty Name="CPSReferrals" ColumnName="CPSReferrals" />
+                <ScalarProperty Name="DHHSReferrals" ColumnName="DHHSReferrals" />
+                <ScalarProperty Name="PublicMentalHealthReferrals" ColumnName="PublicMentalHealthReferrals" />
+                <ScalarProperty Name="MentalHealthAgencyReferrals" ColumnName="MentalHealthAgencyReferrals" />
+                <ScalarProperty Name="SubstanceAbuseServicesReferrals" ColumnName="SubstanceAbuseServicesReferrals" />
+                <ScalarProperty Name="HomelessnessServicesReferrals" ColumnName="HomelessnessServicesReferrals" />
+                <ScalarProperty Name="FaithCommunityReferrals" ColumnName="FaithCommunityReferrals" />
+                <ScalarProperty Name="BusinessPartnerReferrals" ColumnName="BusinessPartnerReferrals" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherDuties">
+            <EntityTypeMapping TypeName="SocialWorkersAppModel.OtherDuty">
+              <MappingFragment StoreEntitySet="OtherDuties">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SoicialWorker" ColumnName="SoicialWorker" />
+                <ScalarProperty Name="ReportMonthID" ColumnName="ReportMonthID" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="CarRiderDuty" ColumnName="CarRiderDuty" />
+                <ScalarProperty Name="BusDuty" ColumnName="BusDuty" />
+                <ScalarProperty Name="LunchDuty" ColumnName="LunchDuty" />
+                <ScalarProperty Name="HallDuty" ColumnName="HallDuty" />
+                <ScalarProperty Name="AddressVerification" ColumnName="AddressVerification" />
+                <ScalarProperty Name="LongTermSuspension" ColumnName="LongTermSuspension" />
+                <ScalarProperty Name="Homelessness" ColumnName="Homelessness" />
+                <ScalarProperty Name="BenchMarks" ColumnName="BenchMarks" />
+                <ScalarProperty Name="ODOtherNo" ColumnName="ODOtherNo" />
+                <ScalarProperty Name="ODOtherText" ColumnName="ODOtherText" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Responsives">
+            <EntityTypeMapping TypeName="SocialWorkersAppModel.Responsive">
+              <MappingFragment StoreEntitySet="Responsive">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SoicialWorker" ColumnName="SoicialWorker" />
+                <ScalarProperty Name="ReportMonthID" ColumnName="ReportMonthID" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="IndividualCounselingSession" ColumnName="IndividualCounselingSession" />
+                <ScalarProperty Name="SmallGroupSession" ColumnName="SmallGroupSession" />
+                <ScalarProperty Name="ClassRoomSession" ColumnName="ClassRoomSession" />
+                <ScalarProperty Name="ParentConferences" ColumnName="ParentConferences" />
+                <ScalarProperty Name="HomeVisits" ColumnName="HomeVisits" />
+                <ScalarProperty Name="ParentTelephoneCalls" ColumnName="ParentTelephoneCalls" />
+                <ScalarProperty Name="ParentWorkshopsFacilitated" ColumnName="ParentWorkshopsFacilitated" />
+                <ScalarProperty Name="SITInterventions" ColumnName="SITInterventions" />
+                <ScalarProperty Name="OtherServices" ColumnName="OtherServices" />
+                <ScalarProperty Name="DrugFactsActionPack" ColumnName="DrugFactsActionPack" />
+                <ScalarProperty Name="WiseOwls" ColumnName="WiseOwls" />
+                <ScalarProperty Name="SMARTTeam" ColumnName="SMARTTeam" />
+                <ScalarProperty Name="BullyProofingSchools" ColumnName="BullyProofingSchools" />
+                <ScalarProperty Name="ConflictResolution" ColumnName="ConflictResolution" />
+                <ScalarProperty Name="HabitsofHighlyEffectiveTeens" ColumnName="HabitsofHighlyEffectiveTeens" />
+                <ScalarProperty Name="SupportGroupActivities" ColumnName="SupportGroupActivities" />
+                <ScalarProperty Name="AllAboutMe" ColumnName="AllAboutMe" />
+                <ScalarProperty Name="SkillsforGrowing" ColumnName="SkillsforGrowing" />
+                <ScalarProperty Name="Peacemakers" ColumnName="Peacemakers" />
+                <ScalarProperty Name="TheOtherWesMoore" ColumnName="TheOtherWesMoore" />
+                <ScalarProperty Name="HowChildrenSucceed" ColumnName="HowChildrenSucceed" />
+                <ScalarProperty Name="SocialWorkToolkit" ColumnName="SocialWorkToolkit" />
+                <ScalarProperty Name="DaysandCounting" ColumnName="DaysandCounting" />
+                <ScalarProperty Name="WhyTry" ColumnName="WhyTry" />
+                <ScalarProperty Name="ToolsforTeachingSocialSkills" ColumnName="ToolsforTeachingSocialSkills" />
+                <ScalarProperty Name="CurriculumOther" ColumnName="CurriculumOther" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentReferrals">
+            <EntityTypeMapping TypeName="SocialWorkersAppModel.StudentReferral">
+              <MappingFragment StoreEntitySet="StudentReferrals">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SoicialWorker" ColumnName="SoicialWorker" />
+                <ScalarProperty Name="ReportMonthID" ColumnName="ReportMonthID" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="AmericanIndianFemale" ColumnName="AmericanIndianFemale" />
+                <ScalarProperty Name="AmericanIndianMale" ColumnName="AmericanIndianMale" />
+                <ScalarProperty Name="AsianFemale" ColumnName="AsianFemale" />
+                <ScalarProperty Name="AsianMale" ColumnName="AsianMale" />
+                <ScalarProperty Name="BlackFemale" ColumnName="BlackFemale" />
+                <ScalarProperty Name="BlackMale" ColumnName="BlackMale" />
+                <ScalarProperty Name="HispanicFemale" ColumnName="HispanicFemale" />
+                <ScalarProperty Name="HispanicMale" ColumnName="HispanicMale" />
+                <ScalarProperty Name="MultiracialFemale" ColumnName="MultiracialFemale" />
+                <ScalarProperty Name="MultiracialMale" ColumnName="MultiracialMale" />
+                <ScalarProperty Name="WhiteFemale" ColumnName="WhiteFemale" />
+                <ScalarProperty Name="WhiteMale" ColumnName="WhiteMale" />
+                <ScalarProperty Name="AcademicPerformance" ColumnName="AcademicPerformance" />
+                <ScalarProperty Name="AbuseNeglectConsult" ColumnName="AbuseNeglectConsult" />
+                <ScalarProperty Name="AdministrativeRequest" ColumnName="AdministrativeRequest" />
+                <ScalarProperty Name="AlcoholDrugSubstanceAbuse" ColumnName="AlcoholDrugSubstanceAbuse" />
+                <ScalarProperty Name="Attendance" ColumnName="Attendance" />
+                <ScalarProperty Name="BehaviorManagement" ColumnName="BehaviorManagement" />
+                <ScalarProperty Name="Bullying" ColumnName="Bullying" />
+                <ScalarProperty Name="CharacterDevelopment" ColumnName="CharacterDevelopment" />
+                <ScalarProperty Name="ConflictResolution" ColumnName="ConflictResolution" />
+                <ScalarProperty Name="DropoutPrevention" ColumnName="DropoutPrevention" />
+                <ScalarProperty Name="ECReferrals" ColumnName="ECReferrals" />
+                <ScalarProperty Name="EmergencyAssistance" ColumnName="EmergencyAssistance" />
+                <ScalarProperty Name="HealthDental" ColumnName="HealthDental" />
+                <ScalarProperty Name="Homelessness" ColumnName="Homelessness" />
+                <ScalarProperty Name="MentalHealth" ColumnName="MentalHealth" />
+                <ScalarProperty Name="NeedsAssessment" ColumnName="NeedsAssessment" />
+                <ScalarProperty Name="SIT" ColumnName="SIT" />
+                <ScalarProperty Name="SMOD" ColumnName="SMOD" />
+                <ScalarProperty Name="SocialServiceNeeds" ColumnName="SocialServiceNeeds" />
+                <ScalarProperty Name="SuspensionFollowup" ColumnName="SuspensionFollowup" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vew_SchoolInfo">
+            <EntityTypeMapping TypeName="SocialWorkersAppModel.vew_SchoolInfo">
+              <MappingFragment StoreEntitySet="vew_SchoolInfo">
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="Principal" ColumnName="Principal" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
